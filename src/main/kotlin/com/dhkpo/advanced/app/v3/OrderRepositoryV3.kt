@@ -10,9 +10,7 @@ class OrderRepositoryV3(private val trace: LogTrace) {
         var status: TraceStatus? = null
         try {
             status = trace.begin("OrderRepository.save()")
-            if (itemId == "ex") {
-                throw IllegalStateException("예외 발생!")
-            }
+            if (itemId == "ex") throw IllegalStateException("예외 발생!")
             sleep(1000)
             trace.end(status)
         } catch (e: Exception) {
