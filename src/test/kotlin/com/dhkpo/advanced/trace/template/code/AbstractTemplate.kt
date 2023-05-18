@@ -16,5 +16,5 @@ abstract class AbstractTemplate {
         log.info("resultTime={}", resultTime)
     }
 
-    protected open fun call() {}
+    protected abstract fun call()
 }
