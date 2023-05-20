@@ -16,6 +16,26 @@ class TemplateMethodTest {
         logic2()
     }
 
+    private fun logic2() {
+        val startTime = System.currentTimeMillis()
+        // 비즈니스 로직 실행
+        log.info("비즈니스 로직1 실행")
+        // 비즈니스 로직 종료
+        val endTime = System.currentTimeMillis()
+        val resultTime = endTime - startTime
+        log.info("resultTime={}", resultTime)
+    }
+
+    private fun logic1() {
+        val startTime = System.currentTimeMillis()
+        // 비즈니스 로직 실행
+        log.info("비즈니스 로직2 실행")
+        // 비즈니스 로직 종료
+        val endTime = System.currentTimeMillis()
+        val resultTime = endTime - startTime
+        log.info("resultTime={}", resultTime)
+    }
+
     /**
      * 템플릿 메서드 패턴 적용
      */
@@ -46,25 +66,5 @@ class TemplateMethodTest {
             }
         }
         template2.execute()
-    }
-
-    private fun logic2() {
-        val startTime = System.currentTimeMillis()
-        // 비즈니스 로직 실행
-        log.info("비즈니스 로직1 실행")
-        // 비즈니스 로직 종료
-        val endTime = System.currentTimeMillis()
-        val resultTime = endTime - startTime
-        log.info("resultTime={}", resultTime)
-    }
-
-    private fun logic1() {
-        val startTime = System.currentTimeMillis()
-        // 비즈니스 로직 실행
-        log.info("비즈니스 로직2 실행")
-        // 비즈니스 로직 종료
-        val endTime = System.currentTimeMillis()
-        val resultTime = endTime - startTime
-        log.info("resultTime={}", resultTime)
     }
 }
